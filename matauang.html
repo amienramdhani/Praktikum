@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+	<title>Aplikasi Konversi Rupiah</title>
+	<style type="text/css">
+		table{
+			margin: auto;
+			border: solid white;
+		}
+		h1{
+			text-align: center;
+			color: white;
+		}
+		body{
+			background-color: #00b0e0;
+			color: white;
+		}
+		#nilai{
+			height: 40px;
+			width: 300px;
+		}
+		#valas{
+			height: 40px;
+			width: 300px;
+		}
+		#hasil{
+			height: 40px;
+			width: 300px;
+		}
+	</style>
+</head>
+<body>
+
+	<table>
+		<h1>Kurs Rupiah Mata Uang Asing</h1>
+		<tr>
+			<th>Masukan Nilai</th>
+			<th>Valas</th>
+			<th>Nilai Rupiah</th>
+		</tr>
+		<tr>
+			<td><input type="text" name="nilai" id="nilai" placeholder="Masukkan Nilai Mata Uang"></td>
+			<td>
+				<select id="valas" onchange="berubah()">
+					<option value="">--Pilih Mata Uangnya---</option>
+					<option value="dolaras">Dolar Us</option>
+					<option value="dolarsing">Dolar Singapure</option>
+					<option value="ringgit">Ringgit Malaysia</option>
+					<option value="yen">Yen Jepang</option>
+					<option value="euro">Euro</option>
+					<option value="real">Riyal Arab Saudi</option>					
+				</select>
+			</td>			
+			<td><input type="text" readonly name="hasil" id="hasil"></td>				
+		</tr>
+	</table>
+
+  <script type="text/javascript">
+	
+	function berubah() {	
+
+		let satu = eval(document.getElementById('nilai').value);
+		let dua  = document.getElementById('valas').value;
+		let tiga = document.getElementById('hasil').value;
+
+		if (dua == "dolaras" ) {
+			 hasil = satu * 9915;
+			document.getElementById('hasil').value = "Rp." + hasil;
+		}else if (dua == "dolarsing") {
+			 hasil = satu * 13472;
+			document.getElementById('hasil').value = "Rp." + hasil;
+		}else if (dua == "ringgit" ) {
+			 hasil = satu * 874;
+			document.getElementById('hasil').value = "Rp." + hasil;
+		}else if (dua == "yen") {
+			 hasil = satu * 120;
+			document.getElementById('hasil').value = "Rp." + hasil;
+		}else if (dua == "euro") {
+			 hasil = satu * 15888;
+			document.getElementById('hasil').value = "Rp." + hasil;
+		}else if (dua == "real") {
+			 hasil = satu * 3592;
+			document.getElementById('hasil').value = "Rp." + hasil;
+		}else{
+			alert("Tidak ada konvert mata uang itu");
+		}
+	}
+
+  </script>
+
+</body>
+</html>

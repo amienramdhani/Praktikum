@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+	<title>Chat Javascript</title>
+	<style type="text/css">
+		.kotak{
+		  border-style: solid;
+		  border-radius: 10px;	        	     
+	      width: 98%;
+	      height: 300px; 
+	      margin: auto;
+  		  border: 7px solid #ebeced;
+  		  overflow: auto;
+		}
+		.tables{
+			padding-left: 20px;			
+		}
+		p{
+			padding-left: 20px;
+			font-size: 20px;
+
+		}
+		button{
+			height: 35px;			
+		}
+		body{
+			background-color: #15181c;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="kotak">
+		<p id="tampilan">Hai</p>
+		<table>
+			<tr>
+				<td class="tables">
+					<input type="text" name="chat" id="chat" size="150%" style="height: 30px;">
+				</td>
+				<td class="tables">
+					<button id="kirim" onclick="pesan()">Kirim</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<script type="text/javascript">
+		
+		function pesan() {
+			
+			let satu = document.getElementById('chat');
+			let dua  = document.getElementById('tampilan');
+			let tiga = document.getElementById('kirim');
+			
+			dua.innerHTML = dua.innerHTML + "<br>" + satu.value;
+			satu.value ="";
+		}
+	</script>
+
+</body>
+</html>
+
+
